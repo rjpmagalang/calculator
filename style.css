@@ -5,6 +5,10 @@
   color: white;
 }
 
+.input-display {
+  border: 1px solid;
+}
+
 .input-text {
   font-size: 6em;
   width: 100% !important;
@@ -19,18 +23,17 @@
   font-size: 2em;
   font-weight: bold;
   height: 2em;
-  border-color: black;
   border: 1px solid;
   text-align: center;
   cursor: pointer;
   margin: 0 auto;
 }
 
-.plus, .divide, .multiply, .minus, .equals {
+.plus, .divide, .mul, .minus, .equals {
   background-color: #FF9C2E;
 }
 
-.plus:active, .divide:active, .multiply:active, .minus:active, .equals:active {
+.plus:active, .divide:active, .mul:active, .minus:active, .equals:active {
   background-color: rgba(255, 156, 46, 0.7);
 }
 
