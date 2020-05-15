@@ -1,0 +1,51 @@
+.container {
+  margin-top:10em;
+  width: 500px !important;
+  background-color: #55575A;
+  color: white;
+}
+
+.input-text {
+  font-size: 6em;
+  width: 100% !important;
+  border: none;
+  text-align: right;
+  background-color: #55575A;
+  color: white;
+}
+
+.calcBtn {
+  padding: 2em;
+  font-size: 2em;
+  font-weight: bold;
+  height: 2em;
+  border-color: black;
+  border: 1px solid;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.plus, .divide, .multiply, .minus, .equals {
+  background-color: #FF9C2E;
+}
+
+.plus:active, .divide:active, .multiply:active, .minus:active, .equals:active {
+  background-color: rgba(255, 156, 46, 0.7);
+}
+
+.clear, .plusMinus, .del {
+  background-color: #656769;
+}
+
+.clear:active, .plusMinus:active, .del:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .point {
+  background-color: #7E8082;
+}
+
+.one:active, .two:active, .three:active, .four:active, .five:active, .six:active, .seven:active, .eight:active, .nine:active, .zero:active, .point:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
