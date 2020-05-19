@@ -1,28 +1,84 @@
-const num = document.querySelectorAll(".num");
-const plus = document.querySelector(".plus");
-const minus = document.querySelector(".minus");
-const mul = document.querySelector(".mul");
-const div = document.querySelector(".div");
+const nums = document.querySelectorAll(".num");
+const operators = document.querySelectorAll(".operator");
 const equals = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
 const del = document.querySelector(".del");
 const plusMinus = document.querySelector(".plusMinus");
 const inputText = document.querySelector(".input-text");
+let operatorCount = 1;
+let firstNum = "";
 
-const add = (num1, num2) => num1 + num2;
-const subtract = (num1, num2) => num1 - num2;
-const multiply = (num1, num2) => num1 * num2;
-const divide = (num1, num2) => num1 / num2;
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+const multiply = (a, b) => a * b;
+const divide = (a, b) => a / b;
 
-function operate(num1, num2, operator) {
+function operate(a, b, operator) {
+    let prevNum = parseFloat(a);
+    let currNum = parseFloat(b);
+    let result = "";
 
-    num.forEach(div => {
-        div.addEventListener("click", (event) => {
-            inputText.value = event.target.textContent; 
-        })
-    });
-
-    clear.addEventListener("click", () => inputText.value = "0");
+    switch (operator) {
+        case "+":
+            result = add(prevNum, currNum);
+            break;
+        case "-":
+            result = subtract(prevNum, currNum);
+            break;
+        case "x":
+            result = multiply(prevNum, currNum);
+            break;
+        case "÷":
+            result = divide(prevNum, currNum);
+            break;
+        default:
+            break;
+    }
+    return result;
 }
 
-operate();
+function addNum(num) {
+    firstNum = num;
+    console.log(firstNum);
+    
+}
+
+function addOperation(operation) {
+    operator = operation;
+}
+
+addNum();
+
+function calculate() {
+         nums.forEach(div => {
+            div.addEventListener("click", (event) => {
+                inputText.value += event.target.textContent;
+                addNum(inputText.value);
+                operatorCount = 0;     
+            })    
+        });
+
+         operators.forEach(div => {
+             div.addEventListener("click", (event) => {
+                if(operatorCount === 0){
+                    inputText.value += event.target.textContent;
+                    ++operatorCount;
+                }
+             })
+         })
+}
+
+calculate();
+
+equals.addEventListener("click", () => {
+    inputText.value = eval(inputText.value);
+})
+
+del.addEventListener("click", () => {
+
+})
+
+clear.addEventListener("click", () => {
+    inputText.value = "";
+    operatorCount = 1;
+});

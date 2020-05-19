@@ -9,6 +9,10 @@
   border: 1px solid;
 }
 
+::placeholder {
+  color: white !important;
+}
+
 .input-text {
   font-size: 6em;
   width: 100% !important;
