@@ -73,6 +73,9 @@ function calculate() {
 calculate();
 
 equals.addEventListener("click", () => {
+    if(inputText.value === ""){
+        return;
+    }
     inputText.value = eval(inputText.value);
 })
 
